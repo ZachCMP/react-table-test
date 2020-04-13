@@ -30,8 +30,6 @@ const useOrderedFields = (fields: Array<string | Field<any>>) => {
 const useViews = <T, >(fields: Array<string | Field<T>>) => {
   const [selectedViews, setSelectedViews] = useState<{ [key: string]: string }>({})
 
-  console.log({ selectedViews })
-
   const views: ViewMap<T> = fields.reduce((acc, field) => {
     const key = typeof field === 'string' ? field : field.key
     let current: FieldView<T> | null = null
